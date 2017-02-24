@@ -1,8 +1,9 @@
 p#notice = notice
 
-p
-  strong Index:
-  = @user.index
+= simple_form_for @user do |f|
+  - @user.attributes.each do |attribute|
+    .field
+      = f.input attribute[0].to_sym, input_html: { rows: 10 }, disabled: true
 
 = link_to 'Edit', edit_user_path(@user)
 '|

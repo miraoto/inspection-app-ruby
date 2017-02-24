@@ -1,5 +1,10 @@
 p#notice = notice
 
+= simple_form_for @comment do |f|
+  - @comment.attributes.each do |attribute|
+    .field
+      = f.input attribute[0].to_sym, input_html: { rows: 10 }, disabled: true
+
 
 = link_to 'Edit', edit_comment_path(@comment)
 '|

@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis'
 gem 'redis-rails'
 gem 'action-store'
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3'

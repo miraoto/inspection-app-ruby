@@ -1,6 +1,12 @@
 p#notice = notice
 
+= simple_form_for @post do |f|
+  - @post.attributes.each do |attribute|
+    .field
+      = f.input attribute[0].to_sym, input_html: { rows: 10 }, disabled: true
+
 
 = link_to 'Edit', edit_post_path(@post)
 '|
 = link_to 'Back', posts_path
+
