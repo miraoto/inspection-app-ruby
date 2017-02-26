@@ -17,6 +17,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    action-store (0.2.1)
+      rails (>= 4.2.0, < 5.1)
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
       nio4r (~> 1.2)
@@ -190,6 +192,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    simple_form (3.4.0)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
@@ -239,6 +244,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action-store
   better_errors!
   binding_of_caller!
   byebug
@@ -256,6 +262,7 @@ DEPENDENCIES
   redis
   redis-rails
   sass-rails (~> 5.0)
+  simple_form
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -1,0 +1,17 @@
+= simple_form_for @comment do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      ul
+        - @comment.errors.full_messages.each do |message|
+          li = message
+  - @comment.attributes.each do |attribute|
+    - next if %w(id likes_count created_at updated_at).one? { |w| w == attribute[0] }
+    .field
+      - if attribute[0] == 'user_id'
+        = f.input attribute[0].to_sym, collection: User.all.pluck(:name, :id)
+      - elsif attribute[0] == 'post_id'
+        = f.input attribute[0].to_sym, collection: Post.all.pluck(:title, :id)
+      - else
+        = f.input attribute[0].to_sym, input_html: { rows: 10 } 
+  .actions = f.submit
