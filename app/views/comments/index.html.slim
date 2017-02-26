@@ -6,10 +6,14 @@ table
       th
       th
       th
+      th
+      th
 
   tbody
     - @comments.each do |comment|
       tr
+        td = comment.id
+        td = comment.body
         td = link_to 'Show', comment
         td = link_to 'Edit', edit_comment_path(comment)
         td = link_to 'Destroy', comment, data: { confirm: 'Are you sure?' }, method: :delete

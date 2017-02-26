@@ -8,6 +8,9 @@
   - @post.attributes.each do |attribute|
     - next if %w(id followers_count following_count star_posts_count created_at updated_at).one? { |w| w == attribute[0] }
     .field
-      = f.input attribute[0].to_sym, input_html: { rows: 10 } 
+      - if attribute[0] == 'user_id'
+        = f.input attribute[0].to_sym, collection: User.all.pluck(:name, :id)
+      - else
+        = f.input attribute[0].to_sym, input_html: { rows: 10 } 
   .actions = f.submit
 
