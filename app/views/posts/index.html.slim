@@ -1,5 +1,5 @@
-
 = link_to 'New Post', new_post_path, class: 'btn btn-primary float-right'
+
 h1 Listing posts
 
 - if @posts.present?
@@ -7,15 +7,21 @@ h1 Listing posts
     thead
       tr
         th
+          | ID
         th
+          | タイトル
         th
-        th
-        th
+          | 
     tbody
       - @posts.each do |post|
         tr
-          td = post.id
-          td = post.title
-          td = link_to 'Show', post
-          td = link_to 'Edit', edit_post_path(post)
-          td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
+          td
+            = post.id
+          td
+            = post.title
+          td
+            = link_to 'Show', post, class: 'btn btn-secondary'
+            | &nbsp;
+            = link_to 'Edit', edit_post_path(post), class: 'btn btn-secondary'
+            | &nbsp;
+            = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-secondary'

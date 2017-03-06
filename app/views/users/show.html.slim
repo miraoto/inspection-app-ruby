@@ -2,9 +2,8 @@ p#notice = notice
 
 = simple_form_for @user do |f|
   - @user.attributes.each do |attribute|
-    .field
-      = f.input attribute[0].to_sym, input_html: { rows: 10 }, disabled: true
+    = f.input attribute[0].to_sym, input_html: { rows: 10 }, disabled: true
 
-= link_to 'Edit', edit_user_path(@user)
-'|
-= link_to 'Back', users_path
+= link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary'
+| &nbsp;
+= link_to 'Back', users_path, class: 'btn btn-secondary'
