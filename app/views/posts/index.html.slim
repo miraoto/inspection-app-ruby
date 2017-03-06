@@ -1,23 +1,21 @@
+
+= link_to 'New Post', new_post_path, class: 'btn btn-primary float-right'
 h1 Listing posts
 
-table
-  thead
-    tr
-      th
-      th
-      th
-      th
-      th
-
-  tbody
-    - @posts.each do |post|
+- if @posts.present?
+  table.table
+    thead
       tr
-        td = post.id
-        td = post.title
-        td = link_to 'Show', post
-        td = link_to 'Edit', edit_post_path(post)
-        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Post', new_post_path
+        th
+        th
+        th
+        th
+        th
+    tbody
+      - @posts.each do |post|
+        tr
+          td = post.id
+          td = post.title
+          td = link_to 'Show', post
+          td = link_to 'Edit', edit_post_path(post)
+          td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
