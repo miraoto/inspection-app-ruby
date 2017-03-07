@@ -11,12 +11,22 @@ h1 Listing users
         th
         th
         th
+        th
 
     tbody
       - @users.each do |user|
         tr
           td = user.id
           td = user.name
+          td
+            label.badge.badge-pill.badge-default
+              = "folllwer #{user.followers_count.to_i}"
+            |&nbsp;
+            label.badge.badge-pill.badge-default
+              = "follow #{user.following_count.to_i}"
+            |&nbsp;
+            label.badge.badge-pill.badge-default
+              = "star #{user.star_posts_count.to_i}"
           td = link_to 'Show', user
           td = link_to 'Edit', edit_user_path(user)
           td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete

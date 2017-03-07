@@ -12,6 +12,8 @@ h1 Listing posts
           | タイトル
         th
           | 
+        th
+          | 
     tbody
       - @posts.each do |post|
         tr
@@ -19,6 +21,12 @@ h1 Listing posts
             = post.id
           td
             = post.title
+          td
+            label.badge.badge-pill.badge-default
+              = "like #{post.likes_count.to_i}"
+            |&nbsp;
+            label.badge.badge-pill.badge-default
+              = "star #{post.stars_count.to_i}"
           td
             = link_to 'Show', post, class: 'btn btn-secondary'
             | &nbsp;

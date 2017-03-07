@@ -11,11 +11,15 @@ h1 Listing comments
         th
         th
         th
+        th
     tbody
       - @comments.each do |comment|
         tr
           td = comment.id
           td = comment.body
+          td
+            label.badge.badge-pill.badge-default
+              = "like #{comment.likes_count.to_i}"
           td = link_to 'Show', comment
           td = link_to 'Edit', edit_comment_path(comment)
           td = link_to 'Destroy', comment, data: { confirm: 'Are you sure?' }, method: :delete
