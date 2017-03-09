@@ -1,4 +1,4 @@
-= javascript_pack_tag 'hello_react'
+/= javascript_pack_tag 'hello_react'
 
 .jumbotron
   .container#vision
@@ -8,18 +8,25 @@
       a.btn.btn-primary.btn-lg[href="#" role="button"]
         | Learn more »
 .container
-  - @posts.each.with_index(1) do |post, index|
-    .row
-      .col-md-4
-        h2
-          = post.title
-        p
-          /= post.comments.first.title
-        p
-          a.btn.btn-secondary[href="#" role="button"]
-            | View details »
-
-  hr
-  footer
-    p
-      | © Company 2017
+  .row
+    - @posts.limit(3).each do |post|
+        .col-md-4
+          h2
+            = post.title
+          - if post.comments.present?
+            blockquote
+              - post.comments.each do |comment|
+                p
+                  = comment.body
+                  small
+                    = " - #{comment.user.name}"
+          - else
+            p
+              | comment not yet
+          p
+            a.btn.btn-secondary[href="#" role="button"]
+              | View details »
+hr
+footer
+  p
+    | © Company 2017
