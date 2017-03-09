@@ -3,6 +3,8 @@ p#notice = notice
 = simple_form_for @post do |f|
   - @post.attributes.each do |attribute|
     = f.input attribute[0].to_sym, input_html: { rows: 10 }, disabled: true
+    - if attribute[0] == 'likes_count' || attribute[0] == 'stars_count'
+      = link_to "#{attribute[0]}", class: 'btn btn-sm'
 = link_to 'Edit', edit_post_path(@post), class: 'btn btn-secondary'
 | &nbsp;
 = link_to 'Back', posts_path, class: 'btn btn-secondary'

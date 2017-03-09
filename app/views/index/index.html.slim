@@ -24,8 +24,13 @@
             p
               | comment not yet
           p
-            a.btn.btn-secondary[href="#" role="button"]
+            = link_to post_path(post), class: 'btn btn-secondary' do
               | View details »
+          button.btn.btn-sm.btn-secondary
+            = "LIKE #{post.likes_count.to_i}"
+          |&nbsp;
+          button.btn.btn-sm.btn-secondary
+            = "STAR #{post.stars_count.to_i}"
 hr
 footer
   p
