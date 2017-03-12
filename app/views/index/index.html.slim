@@ -26,8 +26,8 @@
           p
             = link_to post_path(post), class: 'btn btn-secondary' do
               | View details »
-          button.btn.btn-sm.btn-secondary
-            = "LIKE #{post.likes_count.to_i}"
+          = link_to like_post_path(post, post.user.id), class: 'btn btn-sm btn-secondary' do
+            = "LIKE #{post.likes_count}"
           |&nbsp;
           button.btn.btn-sm.btn-secondary
             = "STAR #{post.stars_count.to_i}"

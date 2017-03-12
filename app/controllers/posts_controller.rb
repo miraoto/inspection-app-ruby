@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
 
   # GET /posts
   # GET /posts.json
@@ -59,6 +59,13 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def like
+    @user = User.find(params[:user_id])
+    User.create_action(:like, target: @post, user: @user)
+    @post.reload.likes_count
+    redirect_to :root
   end
 
   private
