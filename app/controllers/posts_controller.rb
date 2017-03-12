@@ -63,7 +63,11 @@ class PostsController < ApplicationController
 
   def like
     @user = User.find(params[:user_id])
-    User.create_action(:like, target: @post, user: @user)
+    if @user.find_action(:like, target: @post).present?
+      @user.destroy_action(:like, target: @post)
+    else
+      @user.create_action(:like, target: @post)
+    end
     @post.reload.likes_count
     redirect_to :root
   end
