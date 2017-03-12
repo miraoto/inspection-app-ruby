@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts do
+  concern :actionable do
+    get :action, on: :member
+  end
+  resources :posts, :concerns => :actionable do
     member do
       get 'like/:user_id', to: 'posts#like', as: :like
     end
