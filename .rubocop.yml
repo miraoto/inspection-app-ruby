@@ -1,3 +1,22 @@
 AllCops:
   DisplayStyleGuide: true
   StyleGuideBaseURL: https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - db/migrate/*
+    - Guardfile
+    - Gemfile
+    - Procfile
+    - vendor/bundle/**/*
+    - node_modules/**/*
+    - test/*
+    - test/**/*
+    - tmp/**/*
+    - config/initializers/simple_form_bootstrap.rb
+
+Documentation:
+    Enabled: false
+LineLength:
+    Max: 120
