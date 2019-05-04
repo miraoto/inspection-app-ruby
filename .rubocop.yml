@@ -20,3 +20,4 @@ Documentation:
     Enabled: false
 LineLength:
     Max: 120
+require: rubocop-performance

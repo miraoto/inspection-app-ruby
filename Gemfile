@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.2'
+ruby '2.6.0'
 
 gem 'action-store'
 gem 'coffee-rails', '~> 4.2'
@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '5.2.3'
+#gem 'rails', '6.0.0.rc1'
 gem 'redis'
 gem 'redis-rails'
 gem 'sass-rails', '~> 5.0'
@@ -31,6 +32,7 @@ end
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'rubocop'
+  gem 'rubocop-performance'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console'
