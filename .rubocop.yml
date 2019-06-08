@@ -21,3 +21,4 @@ Documentation:
 LineLength:
     Max: 120
 require: rubocop-performance
+require: rubocop-rails
