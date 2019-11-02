@@ -10,6 +10,7 @@
     "path-complete-extname": "^0.1.0",
     "rails-erb-loader": "^3.2.0",
     "webpack": "^2.2.1",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": ">=3.1.11",
     "webpack-merge": "^3.0.0"
   },
