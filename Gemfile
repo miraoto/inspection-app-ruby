@@ -23,7 +23,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'database_rewinder'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'sqlite3'
   gem 'turnip'
 end
