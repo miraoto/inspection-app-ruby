@@ -6,7 +6,7 @@ gem 'action-store'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
-gem 'puma', '~> 3.0'
+gem "puma", ">= 3.12.2"
 gem 'rails', '6.0.0.rc1'
 gem 'redis'
 gem 'redis-rails'
